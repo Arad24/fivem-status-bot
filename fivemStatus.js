@@ -4,6 +4,8 @@ const client = new Discord.Client();
 
 const IP = // server ip:port here
 const TOKEN = ''; // Ur bot token here
+const message_id = '';
+const channel_id = '';
 
 
 
@@ -16,7 +18,7 @@ setTimeout(function(){
             */
             let players = response.data;
             const embed = new Discord.MessageEmbed()
-            embed.setAuthor('ExtraVision Server Status')
+            embed.setAuthor('Fivem Server Status')
                     
             let cPlayers = 0;
             let pIDs = '';
@@ -44,7 +46,7 @@ setTimeout(function(){
             embed.setColor('#FF0000');
             embed.setFooter(`IP: ${IP}`)
             embed.setTimestamp(new Date())
-            client.channels.cache.get("863476510245650452"/*channelid*/).messages.fetch('863476586995908618')
+            client.channels.cache.get(channel_id/*channelid*/).messages.fetch(message_id/*message id*/)
             .then(msg => {
                 msg.edit(embed);
             })
